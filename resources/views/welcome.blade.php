@@ -1,94 +1,46 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
+@section('navbar')
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Feedback system</a>
+            </div>
+        </div>
+    </nav>
+    @endsection
 
-        <title>Feedback</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center  position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top -right links">
-                    @auth
-                        <a href ="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href ="{{ route('login') }}">Login</a>
-                        <a href ="{{ route('register') }}">Register</a>
-                    @endauth
+    @section('body')
+    <!-- Body -->
+        <div class="container">
+            <div class="jumbotron">
+                <div class="row">
+                    <h1>Welcome to feedback system</h1>
+                    <div class="col-lg-4">
+                        <div class="w3-card w3-black w3-animate-top w3-round-large w3-center" id="txt"></div>
+                        <div class="w3-card-4 w3-blue-gray w3-animate-top w3-round-large w3-center" id="date"></div>
+                    </div>
+                    <div class="col-lg-6">
+                        <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
+                        <p><a class="btn btn-lg btn-success" href="{{ URL::route('login') }}" role="button">Admin Login</a></p>
+                    </div>
                 </div>
-            @endif
-            
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
+            </div>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+            <div class="student-login">
+                <div class="col-lg-4 pull-right col-lg-pull-4">
+                    <form class="form-signin">
+                        <h2 class="form-signin-heading">Student sign in</h2>
+                        <input type="text" id="token" class="form-control" placeholder="token" required autofocus>
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                    </form>
                 </div>
             </div>
         </div>
-    </body>
-</html>
+    @endsection
