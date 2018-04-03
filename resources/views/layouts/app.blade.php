@@ -11,7 +11,9 @@
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('css/w3.css') }}" rel="stylesheet">
     <link href="{{ asset('css/custom.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/signin.css') }}" rel="stylesheet">
     <link href="{{ asset('css/mui.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
 
 </head>
 <body onload="startTime()">
@@ -25,4 +27,5 @@
     <script src="{{ asset('js/date_time.js') }}"></script>
     <script src="{{ asset('js/custom.min.js') }}"></script>
     <script src="{{ asset('js/mui.min.js') }}"></script>
+    <script src="{{ asset('js/fontawesome.min.js') }}"></script>
 </html>
