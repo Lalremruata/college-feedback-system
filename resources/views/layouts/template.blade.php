@@ -5,7 +5,8 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="icon" href="{{ asset("favicon.ico") }}" type="image/ico" />
+    <title>@yield('title')</title>
 
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
@@ -14,6 +15,21 @@
     <link href="{{ asset('css/signin.css') }}" rel="stylesheet">
     <link href="{{ asset('css/mui.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
+    <style type="text/css">
+        @font-face {
+            font-family: eczar;
+            src: url("fonts/Eczar-Bold.ttf");
+        }
+        #navbar-logo{
+            font-family: eczar;
+            font-size: 30px;
+        }
+        strong {
+            font-family: eczar;
+            font-size: 20px;
+            color: white !important;
+        }
+    </style>
 
 </head>
 <body onload="startTime()">

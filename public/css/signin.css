@@ -1,12 +1,16 @@
 body {
     padding-top: 40px;
     padding-bottom: 40px;
-    background-color: #eee;
+    background: #757F9A;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #D7DDE8, #757F9A);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #D7DDE8, #757F9A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 .form-signin {
     max-width: 330px;
     padding: 15px;
     margin: 0 auto;
+    background: #F7F7F7;
 }
 .form-signin .form-signin-heading,
 .form-signin .checkbox {
