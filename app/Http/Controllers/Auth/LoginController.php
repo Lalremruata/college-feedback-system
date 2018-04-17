@@ -43,4 +43,13 @@ class LoginController extends Controller
     {
         return 'user_id';
     }
+
+    public function logout(Request $request)
+    {
+        $this->guard()->logout();
+
+        $request->session()->invalidate();
+
+        return redirect('/');
+    }
 }

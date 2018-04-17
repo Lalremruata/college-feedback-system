@@ -19,25 +19,13 @@ Route::get('/admin-login', function () {
     return view('admin.login');
 })->name('admin-login');
 
-Route::get('/dashboard', function () {
-    return view('admin.dashboard');
-})->name('dashboard');
+Route::get('/dashboard', 'adminController@dashboard');
+Route::get('/dashboard/add-department', 'adminController@addDepartment');
+Route::get('/dashboard/add-student', 'adminController@addStudent');
+Route::get('/dashboard/add-faculty', 'adminController@addFaculty');
+Route::get('/dashboard/add-course', 'adminController@addcourse');
+Route::get('/dashboard/add-admin', 'adminController@addAdmin');
 
-Route::get('/dashboard/add-department', function () {
-    return view('admin.add-department');
-});
-Route::get('/dashboard/add-faculty', function () {
-    return view('admin.add-faculty');
-});
-Route::get('/dashboard/add-student', function () {
-    return view('admin.add-student');
-});
-Route::get('/dashboard/add-course', function () {
-    return view('admin.add-course');
-});
-Route::get('/dashboard/add-admin', function () {
-    return view('admin.add-admin');
-});
 
 Auth::routes();
 
