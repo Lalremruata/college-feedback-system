@@ -20,7 +20,7 @@
             {{ csrf_field() }}
             <h3 class="text-center">Please Login</h3>
             <div class="mui-form-group">
-                <input type="text" class="mui-form-control form-control{{ $errors->has('user_id') ? ' is-invalid' : '' }}" name="user_id" value="{{ old('user_id') }}" required>
+                <input type="text" class="mui-form-control form-control{{ $errors->has('userId') ? ' is-invalid' : '' }}" name="userId" value="{{ old('userId') }}" required>
                 <label class="mui-form-floating-label">Admin id</label>
                 {{-- @if ($errors->has('user_id'))
                     <span class="invalid-feedback">

@@ -41,7 +41,7 @@ class LoginController extends Controller
 
     public function username()
     {
-        return 'user_id';
+        return 'userId';
     }
 
     public function logout(Request $request)

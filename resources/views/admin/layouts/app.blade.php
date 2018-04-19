@@ -27,7 +27,7 @@
         <div class="col-md-3 left_col menu_fixed">
             <div class="left_col scroll-view">
                 <div class="navbar nav_title" style="border: 0;">
-                    <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Feedback System</span></a>
+                    <a href="{{ url('/') }}" class="site_title"><i class="fa fa-tachometer"></i> <span>Feedback System</span></a>
                 </div>
 
                 <div class="clearfix"></div>
@@ -38,7 +38,7 @@
                         <img src="" alt="..." class="img-circle profile_img">
                     </div>
                     <div class="profile_info">
-                        <span>Welcome, Admin</span>
+                        <span>Welcome, <strong class="w3-text-amber">{{ Auth::user()->name }}</strong></span>
                     </div>
                 </div>
                 <!-- /menu profile quick info -->
@@ -102,7 +102,7 @@
                         <a id="menu_toggle"><i class="fa fa-bars"></i></a>
                     </div>
 
-                    <ul class="nav navbar-nav navbar-right">
+                    <ul class="nav navbar-nav navbar-right" style="padding-right: 15px">
                         <li class="">
                             <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                                 <img src="images/img.jpg" alt="">{{ Auth::user()->name }}
@@ -115,7 +115,6 @@
                                                      document.getElementById('logout-form').submit();">
                                         Logout
                                     </a>
-
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         {!! csrf_field() !!}
                                     </form>
@@ -128,8 +127,12 @@
         </div>
 
         <!-- body -->
-        @section('body')
-            @show
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                @section('body')
+                @show
+            </div>
+        </div>
 
         <!-- footer content -->
         <!--

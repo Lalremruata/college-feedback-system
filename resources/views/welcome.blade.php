@@ -23,7 +23,7 @@
         <div class="container">
             <div class="jumbotron">
                 <div class="row">
-                        <div class="w3-animate-top w3-black" id="txt" style="height: 163px; width: 163px; font-size: 27px; padding: 55px 0px 0 8px; border-radius: 50%; margin: 0 auto; border:8px solid #5a738e"></div>
+                        <div class="w3-animate-top w3-black text-center" id="txt" style="height: 163px; width: 163px; font-size: 27px; padding: 55px 0px 0 0px; border-radius: 50%; margin: 0 auto; border:8px solid #5a738e"></div>
                         <div class=" w3-animate-top w3-round-large w3-center " style="font-size: 27px;" id="date"></div>
                         <div style="border-bottom: 1px dotted black; max-width: 330px;margin: 0 auto;"> </div>
                     </div>

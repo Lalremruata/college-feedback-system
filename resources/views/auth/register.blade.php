@@ -29,9 +29,9 @@
                             <label for="email" class="col-md-4 col-form-label text-md-right">User Id</label>
 
                             <div class="col-md-6">
-                                <input id="user_id" type="text" class="form-control{{ $errors->has('user_id') ? ' is-invalid' : '' }}" name="user_id" value="{{ old('user_id') }}" required>
+                                <input id="userId" type="text" class="form-control{{ $errors->has('userId') ? ' is-invalid' : '' }}" name="userId" value="{{ old('userId') }}" required>
 
-                                @if ($errors->has('user_id'))
+                                @if ($errors->has('userId'))
                                     <span class="invalid-feedback">
                                         <strong>{{ $errors->first('user_id') }}</strong>
                                     </span>
