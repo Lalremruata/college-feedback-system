@@ -1,17 +1,21 @@
-@extends('layouts.app')
+@extends('layouts.template')
 @section('body')
     <div class="container">
 
         <form class="form-signin">
-            <h2 class="form-signin-heading">Please sign in</h2>
-            <label for="inputEmail" class="sr-only">Email address</label>
-            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-            <label for="inputPassword" class="sr-only">Password</label>
-            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox" value="remember-me"> Remember me
-                </label>
+            <a href="{!! url('/dashboard'); !!}">
+                <button class="btn btn-large btn-success"><span class="fa fa-arrow-left"></span> Back Home</button>
+            </a>
+            <h3 class="text-center">Please Login</h3>
+            <div class="mui-form-group">
+                <input type="text" class="mui-form-control">
+                <label class="mui-form-floating-label">Admin id</label>
+                <span class="bar"></span>
+            </div>
+            <div class="mui-form-group">
+                <input type="password" class="mui-form-control">
+                <label class="mui-form-floating-label">Password</label>
+                <span class="bar"></span>
             </div>
             <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
         </form>

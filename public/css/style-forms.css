@@ -1,0 +1,10 @@
+#input-form {
+    max-width: 500px;
+    padding: 15px;
+    margin: 0 auto;
+    background: #F7F7F7;
+}
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border: 1px solid #0C0;
+}

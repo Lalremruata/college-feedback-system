@@ -13,12 +13,15 @@
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
-Route::get('/login', function () {
-    return view('admin.login');
-})->name('login');
+Route::get('dashboard', 'adminController@dashboard');
+Route::get('dashboard/add-department', 'adminController@addDepartment');
+Route::get('dashboard/add-student', 'adminController@addStudent');
+Route::get('dashboard/add-faculty', 'adminController@addFaculty');
+Route::get('dashboard/add-course', 'adminController@addcourse');
+Route::get('dashboard/add-admin', 'adminController@addAdmin');
 
-Route::get('/dashboard', function () {
-    return view('admin.dashboard');
-})->name('dashboard');
+Auth::routes();
+
+Route::resource('departments', 'DepartmentController');
