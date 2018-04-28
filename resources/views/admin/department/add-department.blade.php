@@ -7,7 +7,7 @@
             <h3 class="text-center">Add Department</h3>
             <div class="form-group">
                 <label class="">Department ID</label>
-                <input type="text" class="form-control" name="departmentId" value="{{ old('departmentId') }}" data-parsley-maxlength="2"
+                <input type="text" class="form-control" name="departmentId" value="{{ old('departmentId') }}" data-parsley-maxlength="10"
                        required>
             </div>
             <div class="form-group">

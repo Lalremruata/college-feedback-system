@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\department;
+use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Session;
 
 class DepartmentController extends Controller
 {
@@ -14,7 +17,8 @@ class DepartmentController extends Controller
      */
     public function index()
     {
-        //
+        $departments = department::all();
+        return view('admin.department.view-departments', compact('departments'));
     }
 
     /**
@@ -35,13 +39,39 @@ class DepartmentController extends Controller
      */
     public function store(Request $request)
     {
-        $department = new department;
-        $department->departmentId = $request->departmentId;
-        $department->departmentName = $request->departmentName;
+        try {
+            $this->validate($request, array(
+                'departmentId' => "required|max:10",
+                'departmentName' => 'required'
+            ));
 
-        $department->save();
+            $department = new department;
+            $department->departmentId = $request->departmentId;
+            $department->departmentName = $request->departmentName;
 
-        return redirect('dashboard/add-department');
+            $department->save();
+
+            Session::flash('success', 'Department Successfully added');
+            return redirect()->route('departments.index');
+        }
+        catch (QueryException $e) {
+            $dbCode = trim($e->getCode());
+            //Codes specific to mysql errors
+            switch ($dbCode)
+            {
+                case 23000:
+                    $errorMessage = 'Duplicate entry | Department already exist ';
+                    break;
+                case 1062:
+                    $errorMessage = 'Duplicate Entry ';
+                    break;
+                default:
+                    $errorMessage = 'database invalid';
+            }
+
+            return redirect()->back()->with('message',"$errorMessage")->withInput(Input::all());
+
+        }
     }
 
     /**
@@ -52,7 +82,7 @@ class DepartmentController extends Controller
      */
     public function show(department $department)
     {
-        return view('admin.add-department');
+        //return view('admin.add-department');
     }
 
     /**
@@ -61,9 +91,12 @@ class DepartmentController extends Controller
      * @param  \App\department  $department
      * @return \Illuminate\Http\Response
      */
-    public function edit(department $department)
+    public function edit($department)
     {
-        //
+
+        $departments = department::where('departmentId', $department)->first();
+
+        return view('admin.department.edit-department', compact('departments'));;
     }
 
     /**

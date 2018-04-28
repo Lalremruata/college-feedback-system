@@ -19,6 +19,8 @@
     <link href="{{ asset('css/dashboard.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style-forms.css') }}" rel="stylesheet">
     <link href="{{ asset('css/bootstrap-progressbar-3.3.4.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/dataTables.bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/parsley.css') }}" rel="stylesheet">
 </head>
 
 <body class="nav-md w3-white">
@@ -51,8 +53,8 @@
                         <ul class="nav side-menu">
                             <li><a><i class="fa fa-edit"></i> Manage Department <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
-                                    <li><a href="{!! url('/dashboard/add-department') !!}">Add Department</a></li>
-                                    <li><a href="#">View All</a></li>
+                                    <li><a href="{!! url('/dashboard/department/add-department') !!}">Add Department</a></li>
+                                    <li><a href="{!! route('departments.index') !!}">View All</a></li>
                                 </ul>
                             </li>
                             <li><a><i class="fa fa-edit"></i> Manage Faculty <span class="fa fa-chevron-down"></span></a>
@@ -129,6 +131,7 @@
         <!-- body -->
         <div class="row">
             <div class="col-md-4 col-md-offset-4">
+                @include('admin.department.partials._messages')
                 @section('body')
                 @show
             </div>
@@ -155,6 +158,9 @@
 <script src="{{ asset('js/custom.min.js') }}"></script>
 <script src="{{ asset('js/holder.min.js') }}"></script>
 <script src="{{ asset('js/fontawesome.min.js') }}"></script>
+<script src="{{ asset('js/dataTables.bootstrap.min.js') }}"></script>
+<script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('js/parsley.min.js') }}"></script>
 
 <script>
     $(function () {
@@ -168,6 +174,14 @@
                 $('#sidebar-logout').hide();
         });
     });
+</script>
+<script>
+    $('#form').parsley();
+    $(document).ready(function() {
+        $('#table').DataTable({
+            "pageLength":20
+        });
+    } );
 </script>
 </body>
 </html>

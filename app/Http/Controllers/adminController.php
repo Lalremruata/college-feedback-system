@@ -23,7 +23,7 @@ class adminController extends Controller
 
     public function addDepartment()
     {
-        return view('admin.add-department');
+        return view('admin.department.add-department');
     }
 
     public function addStudent()
