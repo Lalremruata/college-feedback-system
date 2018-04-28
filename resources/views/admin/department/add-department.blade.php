@@ -2,12 +2,13 @@
 @section('title', 'add-department')
 @section('body')
     <div id="input-form">
-        <form id="login-form" class="" role="form" method="POST" action="{{ route('departments.store') }}">
+        <form id="form" class="" role="form" method="POST" action="{{ route('departments.store') }}">
             {{ csrf_field() }}
             <h3 class="text-center">Add Department</h3>
             <div class="form-group">
                 <label class="">Department ID</label>
-                <input type="text" class="form-control" name="departmentId" value="{{ old('departmentId') }}" required>
+                <input type="text" class="form-control" name="departmentId" value="{{ old('departmentId') }}" data-parsley-maxlength="2"
+                       required>
             </div>
             <div class="form-group">
                 <label class="">Department Name</label>
