@@ -16,7 +16,7 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('dashboard', 'adminController@dashboard');
-Route::get('dashboard/add-department', 'adminController@addDepartment');
+Route::get('dashboard/department/add-department', 'adminController@addDepartment');
 Route::get('dashboard/add-student', 'adminController@addStudent');
 Route::get('dashboard/add-faculty', 'adminController@addFaculty');
 Route::get('dashboard/add-course', 'adminController@addcourse');
